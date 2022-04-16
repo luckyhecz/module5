@@ -84,8 +84,7 @@ showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
-  true); // Explicitly setting the flag to get JSON from server processed into an object literal
-});
+  
 // *** finish **
 
 
@@ -116,7 +115,7 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
       //
-       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,"randomCategoryShortName","'"+chosenCategoryShortName+
+       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName","'"+chosenCategoryShortName+
         "'");
 
 
@@ -127,7 +126,9 @@ function buildAndShowHomeHTML (categories) {
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
-}
+},
+true); // Explicitly setting the flag to get JSON from server processed into an object literal
+});
 
 
 // Given array of category objects, returns a random category object.
